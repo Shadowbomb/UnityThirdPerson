@@ -1,15 +1,16 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.EventSystems;
 
 public class RayCaster : MonoBehaviour {
     private Camera _camera;
 
     // Start is called before the first frame update
     void Start() {
-        _camera = GetComponent<Camera>();
+        /*_camera = GetComponent<Camera>();
 
         Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
+        Cursor.visible = false;*/
     }
 
     private void OnGUI() {
@@ -21,7 +22,7 @@ public class RayCaster : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
-        if (Input.GetMouseButtonDown(0)) {
+        if (Input.GetMouseButtonDown(0) && !EventSystem.current.IsPointerOverGameObject()) {
             Vector3 point = new Vector3(_camera.pixelWidth / 2, _camera.pixelHeight / 2, 0);
             Ray ray = _camera.ScreenPointToRay(point);
             RaycastHit hit;
