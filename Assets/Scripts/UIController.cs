@@ -7,13 +7,26 @@ public class UIController : MonoBehaviour {
     [SerializeField] private TextMeshProUGUI scoreLabel;
     [SerializeField] private SettingsPopup settingsPopup;
 
+    private int _score;
+
+    private void Awake() {
+        Messenger.AddListener(GameEvent.ENEMY_HIT, OnEnemyHit);
+    }
+
+    private void OnDestroy() {
+        Messenger.RemoveListener(GameEvent.ENEMY_HIT, OnEnemyHit);
+    }
+
     private void Start() {
+        _score = 0;
+        scoreLabel.text = _score.ToString();
+
         settingsPopup.Close();
     }
 
-    // Update is called once per frame
-    void Update() {
-        scoreLabel.text = Time.realtimeSinceStartup.ToString();
+    private void OnEnemyHit() {
+        _score += 1;
+        scoreLabel.text = _score.ToString();
     }
 
     public void OnOpenSettings() {

@@ -7,11 +7,24 @@ using UnityEngine;
 public class FPSInput : MonoBehaviour {
     private CharacterController _cCntrl;
     public float speed = 6.0f;
+    public const float baseSpeed = 6.0f;
     public float grav = -9.8f;
 
     // Start is called before the first frame update
     void Start() {
         _cCntrl = GetComponent <CharacterController>();
+    }
+
+    void Awake() {
+        Messenger<float>.AddListener(GameEvent.SPEED_CHANGED, OnSpeedChanged);
+    }
+
+    void OnDestroy() {
+        Messenger<float>.RemoveListener(GameEvent.SPEED_CHANGED, OnSpeedChanged);
+    }
+
+    private void OnSpeedChanged(float value) {
+        speed = baseSpeed * value;
     }
 
     // Update is called once per frame
