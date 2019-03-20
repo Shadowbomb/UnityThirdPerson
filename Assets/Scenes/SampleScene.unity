@@ -3531,6 +3531,7 @@ GameObject:
   - component: {fileID: 1881837459}
   - component: {fileID: 1881067441}
   - component: {fileID: 1880067441}
+  - component: {fileID: 1882002356}
   m_Layer: 0
   m_Name: Cube.001
   m_TagString: Untagged
@@ -3538,6 +3539,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!65 &1882002356
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1882002355}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.020000007, y: 0.21999997, z: 0.019999996}
+  m_Center: {x: -4.656613e-10, y: -0.099999994, z: -9.313226e-10}
 --- !u!1 &1882002359
 GameObject:
   m_ObjectHideFlags: 0
@@ -4309,7 +4323,7 @@ Animator:
   m_GameObject: {fileID: 5148375612357577766}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 08da0146c056646cdbf103f396b1f0b0, type: 3}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b24e57fee6be0468e8cbd987f14f15b2, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
@@ -4475,6 +4489,7 @@ GameObject:
   - component: {fileID: 5148375612357577771}
   - component: {fileID: 5148375612357577769}
   - component: {fileID: 5148375612357577767}
+  - component: {fileID: 5148375612357577773}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -4489,7 +4504,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5148375612357577766}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 85b68e0ee955e9243b35342a0abb133a, type: 3}
   m_Name: 
@@ -4519,7 +4534,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5148375612357577766}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ebf84099dd30a5d49a836c1347a8152b, type: 3}
   m_Name: 
@@ -4579,6 +4594,24 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &5148375612357577773
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5148375612357577766}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a782c889a5a834e41bc73893f4d5132d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 534669905}
+  moveSpeed: 6
+  jumpSpeed: 15
+  gravity: -9.8
+  terminalVelocity: -10
+  minFall: -1.5
 --- !u!1 &5148375612357577774
 GameObject:
   m_ObjectHideFlags: 0
